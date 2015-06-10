@@ -2,23 +2,23 @@
 
 <div class="page-wrapper">
 	<section id="contenedor">
-		<section class="col_titulo"><i class="fa fa-users"></i><h2>Clients</h2><a href="new_client.php" class="btn_new">New Client</a></section>
+		<section class="col_titulo"><i class="fa fa-folder-open"></i><h2>Chambas</h2><a href="new_chamba.php" class="btn_new">New Chamba</a></section>
 		<table>
 			<tr id="col_p">
 				<td>ID</td>
-				<td>Full Name</td>
+				<td>Client</td>
 				<td>Actions</td>
 			</tr>
 
 			<tr>
-				<td>207030855</td>
+				<td>032</td>
 				<td>Elías González</td>
 				<td><i class="fa fa-pencil"></i><i class="fa fa-trash"></i></td>
 			</tr>
 
 			<tr>
-				<td>101220453</td>
-				<td>Bladimir Arroyo</td>
+				<td>033</td>
+				<td>Elías González</td>
 				<td><i class="fa fa-pencil"></i><i class="fa fa-trash"></i></td>
 			</tr>
 		</table>

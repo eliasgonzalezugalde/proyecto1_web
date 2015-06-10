@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Homework 1</title>
+	<title>chamberos.net</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="" />
@@ -12,15 +12,14 @@
 
 <?php if(basename($_SERVER['PHP_SELF'])=='index.php'){echo '<body class="body_login">';} else {echo '<body class="body">';}  ?>
 
-
 	<header id="header">
 		<div class="page-wrapper">
 			<a id="link_logo" href="main.php"><img class="normal" src="img/logo.png" alt="Logo"></a>
 			<nav id="nav">
 				<ul>
 					<li><a href="clients.php">Clients</a></li>
-					<li><a href="main.php">Chambas</a></li>
-					<li><a href="main.php">Invoices</a></li>
+					<li><a href="chambas.php">Chambas</a></li>
+					<li><a href="invoices.php">Invoices</a></li>
 					<li id="user"><a href="#">user</a>
 					<ul>
 						<li><a href="#">Profile</a></li>
