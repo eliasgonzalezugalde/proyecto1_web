@@ -211,7 +211,7 @@ input:focus, textarea:focus {
 	border-color: rgba(255,255,255,0.9);
 	color: #333;
 }
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
 	width: 250px;
 	height: 35px;
 	background-color: transparent;
@@ -231,6 +231,11 @@ input[type="submit"]:hover {
 	color: #fff;
 	background: #15456D;
 	border-color: #15456D;
+}
+input[type="button"]:hover {
+	color: #fff;
+	background: #D53A44;
+	border-color: #D53A44;
 }
 .page-wrapper {
 	max-width: 1100px;
