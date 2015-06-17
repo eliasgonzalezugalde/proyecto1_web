@@ -13,7 +13,7 @@
 			<input type="date" name="date">
 			<input name="amount" type="number" placeholder="Amount" min="0" step="1"/>
 			<input type="submit" value="Save">
-			<input type="button" VALUE="Cancel" onClick="history.go(-1);return true;">
+			<a href="invoices.php">Cancel</a>
 		</form>
 	</section>
 </div>

@@ -185,9 +185,9 @@ input {
 	font-weight: 400;
 	padding: 4px;
 	margin-top: 10px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	border-radius: 5px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 	clear: both;
 	float: left;
 }
@@ -211,7 +211,13 @@ input:focus, textarea:focus {
 	border-color: rgba(255,255,255,0.9);
 	color: #333;
 }
-input[type="submit"], input[type="button"] {
+form a {
+	clear: both;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+input[type="submit"], form a {
 	width: 250px;
 	height: 35px;
 	background-color: transparent;
@@ -232,7 +238,7 @@ input[type="submit"]:hover {
 	background: #15456D;
 	border-color: #15456D;
 }
-input[type="button"]:hover {
+form a:hover {
 	color: #fff;
 	background: #D53A44;
 	border-color: #D53A44;
@@ -325,12 +331,16 @@ input[type="button"]:hover {
 	-moz-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
 	-o-transition: all 0.5s;
-	-webkit-border-bottom-right-radius: 10%;
-	-webkit-border-bottom-left-radius: 10%;
-	-moz-border-radius-bottomright: 10%;
-	-moz-border-radius-bottomleft: 10%;
-	border-bottom-right-radius: 10%;
-	border-bottom-left-radius: 10%;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+.active {
+	text-shadow: 0px 1px 20px rgba(0, 0, 0, 1);
+	color: #fff!important;
 }
 #contenedor {
 	padding: 20px;
@@ -369,9 +379,9 @@ input[type="button"]:hover {
 .cuadro:hover .circulo {
 	background: #295A83;/*295A83*/
 	border-color: #15456D;
-	-moz-border-radius: 10%;
-    -webkit-border-radius: 10%;
-    border-radius: 10%;
+	-moz-border-radius: 5%;
+    -webkit-border-radius: 5%;
+    border-radius: 5%;
 }
 .cuadro:hover .circulo i {
 	color: #f1f1f1;
@@ -380,7 +390,7 @@ input[type="button"]:hover {
 	-ms-transform: rotate(7.5deg);
 	transform: rotate(7.5deg);
 }
-.cuadro i, .circulo, .cuadro:hover .circulo, .cuadro:hover .circulo, table tr i:hover, table tr i, table tr:hover, table td, table tr {
+.cuadro i, .circulo, .cuadro:hover .circulo, .cuadro:hover .circulo, table tr i:hover, table tr i, table tr:hover, table td, table tr, .col_titulo:hover i, .col_titulo i {
 	transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-webkit-transition: all 0.5s;
@@ -424,6 +434,14 @@ input[type="button"]:hover {
 	color: #fff;
 	background: #15456D;
 }
+.col_titulo:hover i {
+	-webkit-perspective: 300px;  /* Chrome 12+, Safari 4+ */
+	-ms-perspective: 300px;
+	perspective: 300px;
+	-webkit-transform: rotateY(180deg);  -webkit-transform-style: preserve-3d;
+	-ms-transform: rotateY(180deg);      -ms-transform-style: preserve-3d;
+	transform: rotateY(180deg);          transform-style: preserve-3d;
+}
 #contenedor table {
 	width: 100%;
 	background: #fff;
@@ -466,9 +484,38 @@ table tr i:hover {
 	border-radius: 10px;
 	font-weight: bold;
 }
+.delete h2 {
+	text-align: center;
+	font-family: open_sans, sans-serif;
+	font-size: 22px;
+	font-weight: 400;
+}
+.delete h2 span {
+	font-weight: bold;
+}
+#btns_delete {
+	overflow: hidden;
+	width: 50%;
+	margin: 25px auto 10px auto;
+}
+#btns_delete a {
+	padding: 20px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	color: #fff;
+}
+#no {
+	float: left;
+	background: red;
+}
+#yes {
+	float: right;
+	background: green;
+}
 #footer {
 	width: 100%;
-	height: 150px;
+	height: 60px;
 	background: #333;
 	padding: 20px;
 	color: #fff;

@@ -13,7 +13,7 @@
 			<input type="date" name="date">
 			<textarea name="notes" placeholder="Notes" cols="28"></textarea>
 			<input type="submit" value="Save">
-			<input type="button" VALUE="Cancel" onClick="history.go(-1);return true;">
+			<a href="chambas.php">Cancel</a>
 		</form>
 	</section>
 </div>

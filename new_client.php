@@ -9,7 +9,7 @@
 			<input type="text" placeholder="Id" name="id">
 			<input type="tel" placeholder="Phone" name="phone">
 			<input type="submit" value="Save">
-			<input type="button" VALUE="Cancel" onClick="history.go(-1);return true;">
+			<a href="clients.php">Cancel</a>
 		</form>
 	</section>
 </div>
