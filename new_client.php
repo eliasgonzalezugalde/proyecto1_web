@@ -7,7 +7,7 @@
 			<input type="text" placeholder="Name" name="name">
 			<input type="text" placeholder="Last Name" name="last_name">
 			<input type="text" placeholder="Id" name="id">
-			<input type="tel" placeholder="Phone" name="phone">
+			<input type="tel" placeholder="Phone" pattern="[0-9]{10}" name="phone">
 			<input type="submit" value="Save">
 			<a href="clients.php">Cancel</a>
 		</form>
