@@ -7,7 +7,7 @@
 			<input type="text" value='<?php echo $nombreArray[0]; ?>' placeholder="Name" name="name">
 			<input type="text" value='<?php echo $nombreArray[1]; ?>' placeholder="Last Name" name="last_name">
 			<input type="text" value='<?php echo $id; ?>' placeholder="Id" name="id">
-			<input type="tel" value='<?php echo $tel; ?>' placeholder="Phone" name="phone">
+			<input type="tel" pattern="[0-9]{10}" value='<?php echo $tel; ?>' placeholder="Phone" name="phone">
 			<input type="submit" value="Save">
 			<a href="clients.php">Cancel</a>
 		</form>
