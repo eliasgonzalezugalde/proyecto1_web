@@ -8,8 +8,5 @@
 
 			<script type="text/javascript" src="js/usuarios.js"></script>
 			<script type="text/javascript" src="js/clients.js"></script>
-			<script type="text/javascript" src="js/chambas.js"></script>
-			<script type="text/javascript" src="js/invoices.js"></script>
-			
 		</body>
 		</html>

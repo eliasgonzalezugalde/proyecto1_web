@@ -37,11 +37,43 @@ var CLIENTS = CLIENTS || {
 
 		for (i in clientsList) {
 			if (clientsList[i].nameU == nameU) {
-				 clientsList[i].nameU = nameU;
-				 clientsList[i].lastName = lastName;
-				 clientsList[i].idU = idU;
-				 clientsList[i].phone = phone;
-				 localStorage.setItem('clients',JSON.stringify(clientsList));
+				clientsList[i].nameU = nameU;
+				clientsList[i].lastName = lastName;
+				clientsList[i].idU = idU;
+				clientsList[i].phone = phone;
+				localStorage.setItem('clients',JSON.stringify(clientsList));
+			};
+		}
+	},
+
+	loadCombo : function(){
+		var clientsList = [];
+		clientsList = JSON.parse(localStorage.getItem("clients"));
+
+		var s = document.getElementById('select_clients');
+		
+		for (i in clientsList) {
+			var t = document.createElement("option");
+			//t.value = clientsList[i].nameU + " " + clientsList[i].lastName;
+			t.textContent = clientsList[i].nameU + " " + clientsList[i].lastName;
+			s.appendChild(t)
+		}
+	},
+
+	loadData : function(nom){
+		var clientsList = [];
+		clientsList = JSON.parse(localStorage.getItem("clients"));
+
+		var n = jQuery('#nombre');
+		var c = jQuery('#cedula');
+		var t = jQuery('#telefono');
+
+		for (i in clientsList) {
+			var nomCompleto = clientsList[i].nameU + " " + clientsList[i].lastName;
+			if (nom == nomCompleto) {
+				n.html(nomCompleto).show();
+				c.html(clientsList[i].idU).show();
+				t.html(clientsList[i].phone).show();
 			};
 		}
 	},
@@ -49,9 +81,14 @@ var CLIENTS = CLIENTS || {
 	bindEvents: function() {
 		jQuery('#saveClient').click(CLIENTS.loadClient);
 		jQuery('#editClient').click(CLIENTS.editClient);
+
+		jQuery( "#select_clients" ).change(function() {
+			CLIENTS.loadData(document.getElementById('select_clients').value);
+		});
 	},
 };
 
 jQuery(document).ready( function() {
 	CLIENTS.bindEvents();
+	CLIENTS.loadCombo();
 });
