@@ -134,6 +134,16 @@ header, footer, article, nav, img, form, input, a {
 .body_login {
 	background: #883000;
 }
+#error_msg {
+	width: 100%;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    margin: 10px 0 0 0;
+    float: left;
+    text-shadow: 0px 0px 15px #000;
+    display: none;
+}
 .blur {
 	position: absolute;
 	top: 0px;
@@ -161,7 +171,7 @@ header, footer, article, nav, img, form, input, a {
 	position: absolute;
 	top: calc(50% - 75px);
 	left: calc(50% - 50px);
-	height: 150px;
+	height: 230px;
 	width: 270px;
 	padding: 10px;
 	z-index: 2;

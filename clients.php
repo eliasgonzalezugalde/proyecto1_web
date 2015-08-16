@@ -4,7 +4,7 @@
 <div class="page-wrapper">
 	<section id="contenedor">
 		<section class="col_titulo"><i class="fa fa-users"></i><h2>Clients</h2><a href="new_client.php" class="btn_new">New Client</a></section>
-		<table>
+		<!--table>
 			<tr id="col_p">
 				<td>ID</td>
 				<td>Full Name</td>
@@ -25,7 +25,7 @@
 				<td><?php echo $t2; ?></td>
 				<td><a href="edit_client.php?nombre=<?php echo $n2; ?>&id=207030855&tel=<?php echo $t2; ?>"><i class="fa fa-pencil"></i></a><a href="delete_client.php?nombre=<?php echo $n2; ?>"><i class="fa fa-trash"></i></a></td>
 			</tr>
-		</table>
+		</table-->
 	</section>
 </div>
 

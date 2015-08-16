@@ -5,8 +5,12 @@
 </div>
 <div class="blur"></div>
 <br>
-<form action="main.php" method="POST" class="login">
-	<input type="text" placeholder="username" name="user">
-	<input type="password" placeholder="password" name="password">
-	<input type="submit" value="Login">
+<form action="#" method="POST" class="login" id="login">
+	<input type="text" placeholder="username" name="user" id="user_login">
+	<input type="password" placeholder="password" name="password" id="pass_login">
+	<input type="submit" value="Login" id="login_btn">
+	<p id="error_msg"></p>
+	<a href="register.php">Register</a>
 </form>
+
+<?php include("footer.php"); ?> 
