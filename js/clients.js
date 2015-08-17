@@ -1,4 +1,5 @@
 var CLIENTS = CLIENTS || {
+	
 	client : function(nameU, lastName, idU, phone){
 		this.nameU = nameU;
 		this.lastName = lastName;
@@ -33,9 +34,11 @@ var CLIENTS = CLIENTS || {
 		var lastName = document.getElementById('lastName').value;
 		var idU = document.getElementById('id').value;
 		var phone = document.getElementById('phone').value;
-
+		var n = JSON.parse(localStorage.getItem("temporal"));      //////////////////////////////////////////////////////////////
 		for (i in clientsList) {
-			if (clientsList[i].nameU == nameU) {
+			var x = clientsList[i].nameU + " " + clientsList[i].lastName;
+			debugger;
+			if ( x == n) {
 				clientsList[i].nameU = nameU;
 				clientsList[i].lastName = lastName;
 				clientsList[i].idU = idU;
@@ -69,6 +72,7 @@ var CLIENTS = CLIENTS || {
 
 		for (i in clientsList) {
 			var nomCompleto = clientsList[i].nameU + " " + clientsList[i].lastName;
+			localStorage.setItem('temporal',JSON.stringify(nomCompleto));       /////////////////////////////////////////////////////////
 			if (nom == nomCompleto) {
 				n.html('Nombre: ' + nomCompleto).show();
 				c.html('Cédula: ' + clientsList[i].idU).show();
@@ -77,13 +81,17 @@ var CLIENTS = CLIENTS || {
 		}
 	},
 
-	loadFields : function(nom){
+	loadFields : function(){													////////////////////////////////////////////////
 		var clientsList = [];
 		clientsList = JSON.parse(localStorage.getItem("clients"));
 		for (i in clientsList) {
 			var nomCompleto = clientsList[i].nameU + " " + clientsList[i].lastName;
-			if (nomCompleto == nom) {
-				debugger;
+			var n = JSON.parse(localStorage.getItem("temporal"));
+			if (nomCompleto == n ) {
+				document.getElementById('name').value = clientsList[i].nameU;
+				document.getElementById('lastName').value = clientsList[i].lastName;
+				document.getElementById('id').value = clientsList[i].idU;
+				document.getElementById('phone').value = clientsList[i].phone;
 			};
 		}
 	},
@@ -95,10 +103,6 @@ var CLIENTS = CLIENTS || {
 		jQuery( "#select_clients" ).change(function() {
 			CLIENTS.loadData(document.getElementById('select_clients').value);
 		});
-
-		jQuery('#loadName').bind('click',function(){
-			CLIENTS.loadFields(document.getElementById('select_clients').value);
-		});
 	},
 };
 
@@ -107,5 +111,10 @@ jQuery(document).ready( function() {
 	if (document.getElementById('select_clients')) {
 		CLIENTS.loadCombo();
 	}
+	if (document.getElementById('editClient')) {												///////////////////////////////
+		CLIENTS.loadFields();
+	};
+		
+	
 	
 });
