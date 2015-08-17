@@ -5,8 +5,9 @@
 					</ul>
 				</div>
 			</footer>
-
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 			<script type="text/javascript" src="js/usuarios.js"></script>
 			<script type="text/javascript" src="js/clients.js"></script>
+			<script type="text/javascript" src="js/script.js"></script>
 		</body>
 		</html>

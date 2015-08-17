@@ -104,5 +104,8 @@ var CLIENTS = CLIENTS || {
 
 jQuery(document).ready( function() {
 	CLIENTS.bindEvents();
-	CLIENTS.loadCombo();
+	if (document.getElementById('select_clients')) {
+		CLIENTS.loadCombo();
+	}
+	
 });
