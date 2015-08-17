@@ -77,12 +77,27 @@ var CLIENTS = CLIENTS || {
 		}
 	},
 
+	loadFields : function(nom){
+		var clientsList = [];
+		clientsList = JSON.parse(localStorage.getItem("clients"));
+		for (i in clientsList) {
+			var nomCompleto = clientsList[i].nameU + " " + clientsList[i].lastName;
+			if (nomCompleto == nom) {
+				debugger;
+			};
+		}
+	},
+
 	bindEvents: function() {
 		jQuery('#saveClient').click(CLIENTS.loadClient);
 		jQuery('#editClient').click(CLIENTS.editClient);
 
 		jQuery( "#select_clients" ).change(function() {
 			CLIENTS.loadData(document.getElementById('select_clients').value);
+		});
+
+		jQuery('#loadName').bind('click',function(){
+			CLIENTS.loadFields(document.getElementById('select_clients').value);
 		});
 	},
 };
