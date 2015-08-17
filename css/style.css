@@ -7,12 +7,12 @@
 	text-rendering:optimizeLegibility;
 }
 a#pull {
-    display: none;
+	display: none;
 }
 * { 
-    margin: 0; 
-    padding: 0; 
-    border: 0; 
+	margin: 0; 
+	padding: 0; 
+	border: 0; 
 }
 html {
 	font-size:62.5%!important;
@@ -38,72 +38,63 @@ a:focus {
 a:hover, a:active {
 	outline:0;
 }
-#nombre {
-	display: none;
-	font: 20px;
-	
-}
 input:focus {
 	outline:0;
 	border:1px solid #04A4CC;
 }
 h1 { 
-    font-size: 2.2rem; 
+	font-size: 2.2rem; 
 } 
 h2 { 
-    font-size: 2.2rem;     
+	font-size: 2.2rem;     
 } 
 h3 { 
-    font-size: 1.2rem; 
+	font-size: 1.2rem; 
 } 
 h4 { 
-    font-size: 1.2rem;     
+	font-size: 1.2rem;     
 } 
 h5 { 
-    font-size: 1.2rem;     
+	font-size: 1.2rem;     
 } 
 p { 
-    font-size: 1.2rem;     
+	font-size: 1.2rem;     
 }
-/*------------------------------------*\
-	TYPOGRAPHY
-\*------------------------------------*/
+
 @font-face {
 	font-family:'gobold';
 	src:url('../fonts/gobold_bold-webfont.eot');
 	src:url('../fonts/gobold_bold-webfont.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/gobold_bold-webfont.woff') format('woff'),
-		url('../fonts/gobold_bold-webfont.ttf') format('truetype'),
-		url('../fonts/gobold_bold-webfont.svg#font-name') format('svg');
-    font-weight:normal;
-    font-style:normal;
+	url('../fonts/gobold_bold-webfont.woff') format('woff'),
+	url('../fonts/gobold_bold-webfont.ttf') format('truetype'),
+	url('../fonts/gobold_bold-webfont.svg#font-name') format('svg');
+	font-weight:normal;
+	font-style:normal;
 }
 @font-face {
-    font-family: 'open_sans';
-    src: url('../fonts/opensans-regular-webfont.eot');
-    src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
-         url('../fonts/opensans-regular-webfont.woff') format('woff'),
-         url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
-         url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'open_sans';
+	src: url('../fonts/opensans-regular-webfont.eot');
+	src: url('../fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/opensans-regular-webfont.woff2') format('woff2'),
+	url('../fonts/opensans-regular-webfont.woff') format('woff'),
+	url('../fonts/opensans-regular-webfont.ttf') format('truetype'),
+	url('../fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 
 }
 @font-face {
-    font-family: 'raleway';
-    src: url('../fonts/raleway-regular-webfont.eot');
-    src: url('../fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway-regular-webfont.woff2') format('woff2'),
-         url('../fonts/raleway-regular-webfont.woff') format('woff'),
-         url('../fonts/raleway-regular-webfont.ttf') format('truetype'),
-         url('../fonts/raleway-regular-webfont.svg#ralewayregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'raleway';
+	src: url('../fonts/raleway-regular-webfont.eot');
+	src: url('../fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/raleway-regular-webfont.woff2') format('woff2'),
+	url('../fonts/raleway-regular-webfont.woff') format('woff'),
+	url('../fonts/raleway-regular-webfont.ttf') format('truetype'),
+	url('../fonts/raleway-regular-webfont.svg#ralewayregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
-/*------------------------------------*\
-    MISC
-\*------------------------------------*/
+
 
 ::selection {
 	background: #aaa;
@@ -120,9 +111,7 @@ p {
 	color:#FFF;
 	text-shadow:none;
 }
-/*------------------------------------*\
-    STRUCTURE
-\*------------------------------------*/
+
 
 header, footer, article, nav, img, form, input, a {
 	transition: all 0.5s;
@@ -141,13 +130,13 @@ header, footer, article, nav, img, form, input, a {
 }
 #error_msg {
 	width: 100%;
-    font-size: 16px;
-    color: #fff;
-    text-align: center;
-    margin: 10px 0 0 0;
-    float: left;
-    text-shadow: 0px 0px 15px #000;
-    display: none;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	margin: 10px 0 0 0;
+	float: left;
+	text-shadow: 0px 0px 15px #000;
+	display: none;
 }
 .blur {
 	position: absolute;
@@ -231,7 +220,7 @@ input[type="submit"], form a {
 	color: #000;
 	font-family: open_sans, sans-serif;
 	font-size: 1.5rem;
-  	font-weight: 400;
+	font-weight: 400;
 	text-transform: uppercase;
 	padding: 6px;
 	margin-top: 10px;
@@ -292,7 +281,7 @@ form a:hover {
 #nav ul li a {
 	font-family: open_sans, sans-serif;
 	font-size: 1.5rem;
-  	font-weight: 400;
+	font-weight: 400;
 	text-transform: uppercase;
 	cursor: pointer;
 	display: inline-block;
@@ -363,7 +352,7 @@ form a:hover {
 	color: #fd7a0d;
 	font-family: open_sans, sans-serif;
 	font-size: 2rem;
-  	font-weight: 400;
+	font-weight: 400;
 	text-transform: uppercase;
 }
 .cuadro i {
@@ -378,16 +367,16 @@ form a:hover {
 	height: 150px;
 	border: 3px solid #c0c0c0;
 	-moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
 	margin: 0 auto;
 }
 .cuadro:hover .circulo {
 	background: #295A83;/*295A83*/
 	border-color: #15456D;
 	-moz-border-radius: 5%;
-    -webkit-border-radius: 5%;
-    border-radius: 5%;
+	-webkit-border-radius: 5%;
+	border-radius: 5%;
 }
 .cuadro:hover .circulo i {
 	color: #f1f1f1;
@@ -415,7 +404,7 @@ form a:hover {
 	padding: 10px;
 	font-family: open_sans, sans-serif;
 	font-size: 2em;
-  	font-weight: 400;
+	font-weight: 400;
 	text-transform: uppercase;
 }
 .col_titulo i {
@@ -428,7 +417,7 @@ form a:hover {
 	color: #f1f1f1;
 	font-family: open_sans, sans-serif;
 	font-size: 1.4rem;
-  	font-weight: 400;
+	font-weight: 400;
 	text-transform: uppercase;
 	padding: 10px;
 	float: right;
@@ -448,6 +437,37 @@ form a:hover {
 	-webkit-transform: rotateY(180deg);  -webkit-transform-style: preserve-3d;
 	-ms-transform: rotateY(180deg);      -ms-transform-style: preserve-3d;
 	transform: rotateY(180deg);          transform-style: preserve-3d;
+}
+.col_select {
+	width: 100%;
+	height: 50px;
+	margin: 0 0 20px 0;
+}
+.col_select i {
+	font-size: 35px;
+	margin: 10px 15px 10px 15px;
+	float: right;
+}
+.select {
+	padding: 0 0 0 15px;
+	width: 84%;
+	float: left;
+	height: 55px;
+}
+.is {
+	width: 16%;
+	float: right;
+	background: #fff;
+}
+#contenido {
+	float: left;
+	overflow: hidden;
+	background: #fff;
+	width: 100%;
+	padding: 20px; 
+}
+#contenido p {
+	font-size: 16px;
 }
 #contenedor table {
 	width: 100%;
@@ -483,7 +503,7 @@ table tr i:hover {
 	background: #222;
 	color: #aaa;
 	font-family: open_sans, sans-serif;
-  	font-weight: 400;
+	font-weight: 400;
 	text-transform: uppercase;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -545,74 +565,110 @@ table tr i:hover {
 	color: #fff;
 	text-shadow: 0px 0px 10px rgba(255, 255, 255, 1);
 }
+@media only screen and (max-width : 792px) {
+	.select {
+		width: 78%;
+	}
+	.is {
+		width: 22%;
+	}
+}
 @media only screen and (max-width : 768px) {
 	#link_logo {
 		display: none;
 	}
-    nav {
-    	width: 100%;
-        height: auto;
-    }
-    nav ul {
-    	margin-top: 60px!important;
-        display: none;
-        width: 100%!important;
-        background: url(../img/fondo_login.jpg) 0 -60px;
-    }
-    nav li {
-        width: 50%;
-        float: left;
-        position: relative;
-    }
-    nav a {
-        text-align: center;
-        width: 100%!important;
-        text-indent: 25px;
-        color: #000;
-    }
-    nav a#pull {
-        display: block;
-        background: transparent;
-        height: 60px;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        font-family: open_sans, sans-serif;
+	nav {
+		width: 100%;
+		height: auto;
+	}
+	nav ul {
+		margin-top: 60px!important;
+		display: none;
+		width: 100%!important;
+		background: url(../img/fondo_login.jpg) 0 -60px;
+	}
+	nav li {
+		width: 50%;
+		float: left;
+		position: relative;
+	}
+	nav a {
+		text-align: center;
+		width: 100%!important;
+		text-indent: 25px;
+		color: #000;
+	}
+	nav a#pull {
+		display: block;
+		background: transparent;
+		height: 60px;
+		width: 100%;
+		position: absolute;
+		top: 0;
+		font-family: open_sans, sans-serif;
 		font-size: 1.5rem;
 		font-weight: 400;
 		text-transform: uppercase;
 		color: #fff;
 		padding: 18px 0 0 0;
-    }
-    nav a#pull:after {
-        content:"";
-        background: url('../img/nav.png') no-repeat;
-        width: 30px;
-        height: 30px;
-        display: inline-block;
-        position: absolute;
-        right: 15px;
-        top: 15px;
-    }
-    nav a#pull img {
-        background: url('../img/logo.png') no-repeat;
-        width: 30px;
-        position: absolute;
-        left: 15px;
-        top: 5px;
-    }
-    #sub {
-    	display: none!important;
-    }
+	}
+	nav a#pull:after {
+		content:"";
+		background: url('../img/nav.png') no-repeat;
+		width: 30px;
+		height: 30px;
+		display: inline-block;
+		position: absolute;
+		right: 15px;
+		top: 15px;
+	}
+	nav a#pull img {
+		background: url('../img/logo.png') no-repeat;
+		width: 30px;
+		position: absolute;
+		left: 15px;
+		top: 5px;
+	}
+	#sub {
+		display: none!important;
+	}
+}
+@media only screen and (max-width : 610px) {
+	.select {
+		width: 72%;
+	}
+	.is {
+		width: 28%;
+	}
 }
 @media only screen and (max-width : 500px) {
 	.cuadro {
 		width: 100%;
 	}
 }
+
 @media only screen and (max-width : 480px) {
 	table td, table tr {
 		padding: 10px 0px 10px 3px;
-  		font-size: 1.3rem;
+		font-size: 1.3rem;
+	}
+	.select {
+		width: 100%;
+	}
+	.is {
+		clear: both;
+		width: 100%;
+	}
+	.is a {
+		width: 50%;
+		float: right;
+		text-align: center;
+	}
+	.is a:hover {
+		background: #FFF2EF;
+	}
+	.is i {
+		text-align: center;
+		float: none;
 	}
 }

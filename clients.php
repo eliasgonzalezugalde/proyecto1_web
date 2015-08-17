@@ -4,12 +4,14 @@
 <div class="page-wrapper">
 	<section id="contenedor">
 		<section class="col_titulo"><i class="fa fa-users"></i><h2>Clients</h2><a href="new_client.php" class="btn_new">New Client</a></section>
-		<select name="select_clients" id="select_clients" placeholder="Client"></select>
-		<option value="" selected disabled>Please select</option>
-
-		<h2 id="nombre"></h2>
-		<h2 id="cedula"></h2>
-		<h2 id="telefono"></h2>
+		<section class="col_select"><select name="select_clients" class="select" id="select_clients"><option value="" selected disabled>Please select</option></select><section class="is"><a href="delete_chamba.php"><i class="fa fa-trash"></i></a><a href="edit_chamba.php"><i class="fa fa-pencil"></i></a></section></section>
+		
+		<section id="contenido">
+			<p id="nombre" class="cont_select"></p>
+			<p id="cedula" class="cont_select"></p>
+			<p id="telefono" class="cont_select"></p>
+		</section>
+		
 
 	</section>
 </div>

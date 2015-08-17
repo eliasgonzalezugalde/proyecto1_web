@@ -17,7 +17,6 @@ var CLIENTS = CLIENTS || {
 	},
 
 	loadClient : function(){
-		debugger;
 		var nameU = document.getElementById('name').value;
 		var lastName = document.getElementById('lastName').value;
 		var idU = document.getElementById('id').value;
@@ -71,9 +70,9 @@ var CLIENTS = CLIENTS || {
 		for (i in clientsList) {
 			var nomCompleto = clientsList[i].nameU + " " + clientsList[i].lastName;
 			if (nom == nomCompleto) {
-				n.html(nomCompleto).show();
-				c.html(clientsList[i].idU).show();
-				t.html(clientsList[i].phone).show();
+				n.html('Nombre: ' + nomCompleto).show();
+				c.html('Cédula: ' + clientsList[i].idU).show();
+				t.html('Teléfono: ' + clientsList[i].phone).show();
 			};
 		}
 	},
