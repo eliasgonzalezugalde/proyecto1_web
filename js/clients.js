@@ -81,7 +81,6 @@ var CLIENTS = CLIENTS || {
 		}
 	},
 
-<<<<<<< HEAD
 	loadFields : function(){													////////////////////////////////////////////////
 		var clientsList = [];
 		clientsList = JSON.parse(localStorage.getItem("clients"));
@@ -97,8 +96,6 @@ var CLIENTS = CLIENTS || {
 		}
 	},
 
-=======
->>>>>>> origin/master
 	bindEvents: function() {
 		jQuery('#saveClient').click(CLIENTS.loadClient);
 		jQuery('#editClient').click(CLIENTS.editClient);
