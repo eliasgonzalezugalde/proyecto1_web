@@ -1,12 +1,17 @@
 <?php include("header.php"); ?>
-<?php
-	$num1="032"; $num2="033"; $n1="Elías González"; $n2="Bladimir Arroyo"; $d1="Esta es la descripción uno"; $d2="Esta es la descripción dos";
-	$f1="2015-06-15"; $f2="2015-05-02"; $nota1="Esta es la nota uno"; $nota2="Sin nota";
-?>
 
 <div class="page-wrapper">
 	<section id="contenedor">
 		<section class="col_titulo"><i class="fa fa-folder-open"></i><h2>Chambas</h2><a href="new_chamba.php" class="btn_new">New Chamba</a></section>
+		<section class="col_select"><select name="select_chambas" class="select" id="select_chambas"><option value="" selected disabled>Please select</option></select><section class="is"><a href="delete_chamba.php"><i class="fa fa-trash"></i></a><a href="edit_chamba.php"><i class="fa fa-pencil"></i></a></section></section>
+		
+		<section id="contenido">
+			<p id="cliente" class="cont_select"></p>
+			<p id="descripcion" class="cont_select"></p>
+			<p id="fecha" class="cont_select"></p>
+			<p id="notas" class="cont_select"></p>
+		</section>
+
 	</section>
 </div>
 
