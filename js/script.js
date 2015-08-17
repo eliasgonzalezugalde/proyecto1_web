@@ -25,3 +25,7 @@ $(window).resize(function(){
         menu.removeAttr('style');
     }
 });
+
+$("#login").submit(function(e) {
+    e.preventDefault();
+});

@@ -1,6 +1,4 @@
-$("#login").submit(function(e) {
-    e.preventDefault();
-});
+
 
 var USERS = USERS || {
 	user : function(user_name, user, pass, admin){

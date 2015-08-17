@@ -5,7 +5,9 @@
 					</ul>
 				</div>
 			</footer>
+
 			<script type="text/javascript" src="js/usuarios.js"></script>
+			<script type="text/javascript" src="js/clients.js"></script>
 			
 		</body>
 		</html>
