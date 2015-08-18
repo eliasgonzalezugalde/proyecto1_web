@@ -6,8 +6,6 @@
 		<form action="saved_invoice.php" method="POST">
 			<input value='' name="clients" placeholder="Clients" list="clientes" id="client">
 			<datalist id="clientes">
-  				<option value="Elías González">
-  				<option value="Bladimir Arroyo">
 			</datalist>
 			<textarea name="description" placeholder="Description" cols="28" id="descriptionI"></textarea>
 			<input value='' type="date" name="date" id="date">

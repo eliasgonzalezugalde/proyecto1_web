@@ -95,7 +95,6 @@ p {
 	font-style: normal;
 }
 
-
 ::selection {
 	background: #aaa;
 	color:#FFF;
@@ -111,7 +110,6 @@ p {
 	color:#FFF;
 	text-shadow:none;
 }
-
 
 header, footer, article, nav, img, form, input, a {
 	transition: all 0.5s;
@@ -160,6 +158,9 @@ header, footer, article, nav, img, form, input, a {
 }
 .header_login img {
 	width: 100%;
+}
+#btn_users {
+	display: none;
 }
 .login {
 	position: absolute;

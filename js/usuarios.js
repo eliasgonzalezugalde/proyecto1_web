@@ -17,9 +17,9 @@ var USERS = USERS || {
 	},
 
 	loadUsers : function(){
-		var userName = document.getElementById('name_users').value;
-		var user = document.getElementById('user_users').value;
-		var pass = document.getElementById('pass_users').value;
+		var userName = document.getElementById('name').value;
+		var user = document.getElementById('userName').value;
+		var pass = document.getElementById('password').value;
 
 		var newUser = new USERS.user(userName, user, pass);
 		newUser.save();
@@ -46,6 +46,75 @@ var USERS = USERS || {
 		};
 	},
 
+	editUser : function(){
+		var usersList = [];
+		usersList = JSON.parse(localStorage.getItem("users"));
+		var name = document.getElementById('name').value;
+		var userName = document.getElementById('userName').value;
+		var password = document.getElementById('password').value;
+		var n = JSON.parse(localStorage.getItem("temporal"));
+		for (i in usersList) {
+			var x = usersList[i].user;
+			if ( x == n) {
+				usersList[i].user_name = name;
+				usersList[i].user = userName;
+				usersList[i].pass = password;
+				localStorage.setItem('users',JSON.stringify(usersList));
+			};
+		}
+	},
+
+	loadCombo : function(){
+		var usersList = [];
+		usersList = JSON.parse(localStorage.getItem("users"));
+		var s = document.getElementById('select_users');
+		for (i in usersList) {
+			var t = document.createElement("option");
+			t.textContent = usersList[i].user;
+			s.appendChild(t)
+		}
+	},
+
+	loadData : function(nom){
+		var usersList = [];
+		usersList = JSON.parse(localStorage.getItem("users"));
+
+		var n = jQuery('#name');
+		var u = jQuery('#userName');
+		var p = jQuery('#password');
+
+		for (i in usersList) {     
+			var user = usersList[i].user; 
+			if (nom == user) {
+				localStorage.setItem('temporal',JSON.stringify(user)); 
+				var aux ="";
+				var x = usersList[i].pass;
+				for (var j = x.length - 1; j >= 0; j--) {
+					aux += "*";
+				};
+				n.html('Name: ' + usersList[i].user_name).show();
+				u.html('User Name: ' + usersList[i].user).show();
+				p.html('Password: ' + aux).show();
+			};
+		}
+	},
+
+	loadFields : function(){	
+		var usersList = [];
+		usersList = JSON.parse(localStorage.getItem("users"));
+		for (i in usersList) {
+			var user = usersList[i].user;
+			var n = JSON.parse(localStorage.getItem("temporal"));
+			if (user == n ) {
+				debugger;
+				document.getElementById('name').value = usersList[i].user_name;
+				document.getElementById('userName').value = usersList[i].user;
+				document.getElementById('password').value = usersList[i].pass;
+				document.getElementById('pass').value = usersList[i].pass;
+			};
+		}
+	},
+
 	saveCurrentUser: function() {
 		var current = JSON.parse(localStorage.getItem("current"));
 		var userLogged = jQuery('#user_logged');
@@ -53,17 +122,28 @@ var USERS = USERS || {
 	},
 
 	bindEvents: function() {
+		jQuery('#editUser').click(USERS.editUser);
+		jQuery('#saveUser').click(USERS.loadUsers);
 		jQuery('#register_btn').click(USERS.loadUsers);
-
 		jQuery('#login_btn').click(USERS.validateUser);
-
-		/*jQuery('#login_btn').bind('click',function(){
-			USERS.loadUserinHeader(5);
-		});*/
+		jQuery( "#select_users" ).change(function() {
+			USERS.loadData(document.getElementById('select_users').value);
+		});
 	},
 };
 
 jQuery(document).ready( function() {
 	USERS.bindEvents();
 	USERS.saveCurrentUser();
+	if (JSON.parse(localStorage.getItem("current")) == 'admin') {
+		jQuery("#btn_users").show();
+	} else {
+		jQuery("#btn_users").hide();
+	};
+	if (document.getElementById('select_users')) {
+		USERS.loadCombo();
+	}
+	if (document.getElementById('editUser')) {												
+		USERS.loadFields();
+	};
 });

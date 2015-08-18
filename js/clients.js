@@ -33,7 +33,7 @@ var CLIENTS = CLIENTS || {
 		var lastName = document.getElementById('lastName').value;
 		var idU = document.getElementById('id').value;
 		var phone = document.getElementById('phone').value;
-		var n = JSON.parse(localStorage.getItem("temporal"));      //////////////////////////////////////////////////////////////
+		var n = JSON.parse(localStorage.getItem("temporal"));
 		for (i in clientsList) {
 			var x = clientsList[i].nameU + " " + clientsList[i].lastName;
 			if ( x == n) {
@@ -52,7 +52,6 @@ var CLIENTS = CLIENTS || {
 		var s = document.getElementById('select_clients');
 		for (i in clientsList) {
 			var t = document.createElement("option");
-			//t.value = clientsList[i].nameU + " " + clientsList[i].lastName;
 			t.textContent = clientsList[i].nameU + " " + clientsList[i].lastName;
 			s.appendChild(t)
 		}
@@ -67,9 +66,9 @@ var CLIENTS = CLIENTS || {
 		var t = jQuery('#telefono');
 
 		for (i in clientsList) {
-			var nomCompleto = clientsList[i].nameU + " " + clientsList[i].lastName;
-			localStorage.setItem('temporal',JSON.stringify(nomCompleto));       
+			var nomCompleto = clientsList[i].nameU + " " + clientsList[i].lastName;      
 			if (nom == nomCompleto) {
+				localStorage.setItem('temporal',JSON.stringify(nomCompleto)); 
 				n.html('Nombre: ' + nomCompleto).show();
 				c.html('Cédula: ' + clientsList[i].idU).show();
 				t.html('Teléfono: ' + clientsList[i].phone).show();

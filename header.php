@@ -21,6 +21,7 @@
 					<li><a href="clients.php">Clients</a></li>
 					<li><a href="chambas.php">Chambas</a></li>
 					<li><a href="invoices.php">Invoices</a></li>
+					<li id="btn_users"><a href="users.php">Users</a></li>
 					<li id="user"><a href="profile.php" id="user_logged"></a>
 					<ul id="sub">
 						<li><a href="index.php">Logout</a></li>

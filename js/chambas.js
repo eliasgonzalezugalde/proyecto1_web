@@ -55,6 +55,17 @@ var CHAMBAS = CHAMBAS || {
 		}
 	},
 
+	loadDataList : function(){
+		var invoicesList = [];
+		invoicesList = JSON.parse(localStorage.getItem("clients"));
+		var options = '';
+
+		for (i in invoicesList) {
+			options += '<option value="'+ invoicesList[i].nameU + " " + invoicesList[i].lastName +'" />';
+		}
+		document.getElementById('clientes').innerHTML = options;
+	},
+
 	loadData : function(nom){
 		var chambasList = [];
 		chambasList = JSON.parse(localStorage.getItem("chambas"));
@@ -63,9 +74,9 @@ var CHAMBAS = CHAMBAS || {
 		var f = jQuery('#fecha');
 		var n = jQuery('#notas');
 		for (i in chambasList) {
-			var nameClient = chambasList[i].client;
-			localStorage.setItem('temporal',JSON.stringify(nameClient));   
-			if (nom == chambasList[i].client) {
+			var nameClient = chambasList[i].client;  
+			if (nom == nameClient) {
+				localStorage.setItem('temporal',JSON.stringify(nameClient)); 
 				c.html('Client: ' + chambasList[i].client).show();
 				d.html('Descrition: ' + chambasList[i].descriptionC).show();
 				f.html('Date: ' + chambasList[i].date).show();
@@ -105,5 +116,8 @@ jQuery(document).ready( function() {
 	}
 	if (document.getElementById('editChambas')) {												
 		CHAMBAS.loadFields();
+	};
+	if (document.getElementById('client')) {												
+		CHAMBAS.loadDataList();
 	};
 });

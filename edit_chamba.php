@@ -7,8 +7,6 @@
 		<form action="saved_chamba.php" method="POST">
 			<input value='' name="clients" placeholder="Clients" list="clientes" id="client">
 			<datalist id="clientes">
-  				<option value="Elías González">
-  				<option value="Bladimir Arroyo">
 			</datalist>
 			<textarea name="description" placeholder="Description" cols="28" id="descriptionC"></textarea>
 			<input value='' type="date" name="date" id="date">

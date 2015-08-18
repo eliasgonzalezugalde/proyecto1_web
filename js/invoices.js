@@ -37,11 +37,11 @@ var INVOICES = INVOICES || {
 		var n = JSON.parse(localStorage.getItem("temporal"));
 		for (i in invoicesList) {
 			if (invoicesList[i].client == n) {
-				 invoicesList[i].client = client;
-				 invoicesList[i].descriptionI = descriptionI;
-				 invoicesList[i].date = date;
-				 invoicesList[i].amount = amount;
-				 localStorage.setItem('invoices',JSON.stringify(invoicesList));
+				invoicesList[i].client = client;
+				invoicesList[i].descriptionI = descriptionI;
+				invoicesList[i].date = date;
+				invoicesList[i].amount = amount;
+				localStorage.setItem('invoices',JSON.stringify(invoicesList));
 			};
 		}
 	},
@@ -57,6 +57,17 @@ var INVOICES = INVOICES || {
 		}
 	},
 
+	loadDataList : function(){
+		var invoicesList = [];
+		invoicesList = JSON.parse(localStorage.getItem("clients"));
+		var options = '';
+
+		for (i in invoicesList) {
+			options += '<option value="'+ invoicesList[i].nameU + " " + invoicesList[i].lastName +'" />';
+		}
+		document.getElementById('clientes').innerHTML = options;
+	},
+
 	loadData : function(nom){
 		var invoicesList = [];
 		invoicesList = JSON.parse(localStorage.getItem("invoices"));
@@ -66,10 +77,10 @@ var INVOICES = INVOICES || {
 		var f = jQuery('#fecha');
 		var m = jQuery('#monto');
 
-		for (i in invoicesList) {
+		for (i in invoicesList) { 
 			var nameClient = invoicesList[i].client;
-			localStorage.setItem('temporal',JSON.stringify(nameClient)); 
 			if (nom == nameClient) {
+				localStorage.setItem('temporal',JSON.stringify(nameClient));
 				c.html('Client: ' + invoicesList[i].client).show();
 				d.html('Description: ' + invoicesList[i].descriptionI).show();
 				f.html('Date: ' + invoicesList[i].date).show();
@@ -109,5 +120,8 @@ jQuery(document).ready( function() {
 	};
 	if (document.getElementById('editInvoices')) {												
 		INVOICES.loadFields();
+	};
+	if (document.getElementById('client')) {												
+		INVOICES.loadDataList();
 	};
 });
