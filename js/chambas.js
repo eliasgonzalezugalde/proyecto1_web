@@ -1,5 +1,5 @@
 var CHAMBAS = CHAMBAS || {
-	client : function(client, descriptionC, date, notes){
+	chamba : function(client, descriptionC, date, notes){
 		this.client = client;
 		this.descriptionC = descriptionC;
 		this.date = date;
@@ -17,27 +17,24 @@ var CHAMBAS = CHAMBAS || {
 	},
 
 	loadChambas : function(){
-		debugger;
 		var client = document.getElementById('client').value;
 		var descriptionC = document.getElementById('descriptionC').value;
 		var date = document.getElementById('date').value;
 		var notes = document.getElementById('notes').value;
-
-		var newChambas = new CHAMBAS.client(client, descriptionC, date, notes);
+		var newChambas = new CHAMBAS.chamba(client, descriptionC, date, notes);
 		newChambas.save();
 	},
 
 	editChambas : function(){
 		var chambasList = [];
-		debugger;
 		chambasList = JSON.parse(localStorage.getItem("chambas"));
 		var client = document.getElementById('client').value;
 		var descriptionC = document.getElementById('descriptionC').value;
 		var date = document.getElementById('date').value;
 		var notes = document.getElementById('notes').value;
-		debugger;
+		var n = JSON.parse(localStorage.getItem("temporal"));
 		for (i in chambasList) {
-			if (chambasList[i].client == client) {
+			if (chambasList[i].client == n) {
 				 chambasList[i].client = client;
 				 chambasList[i].descriptionC = descriptionC;
 				 chambasList[i].date = date;
@@ -47,12 +44,66 @@ var CHAMBAS = CHAMBAS || {
 		}
 	},
 
+	loadCombo : function(){
+		var chambasList = [];
+		chambasList = JSON.parse(localStorage.getItem("chambas"));
+		var c = document.getElementById('select_chambas');
+		for (i in chambasList) {
+			var t = document.createElement("option");
+			t.textContent = chambasList[i].client;
+			c.appendChild(t)
+		}
+	},
+
+	loadData : function(nom){
+		var chambasList = [];
+		chambasList = JSON.parse(localStorage.getItem("chambas"));
+		var c = jQuery('#cliente');
+		var d = jQuery('#descripcion');
+		var f = jQuery('#fecha');
+		var n = jQuery('#notas');
+		for (i in chambasList) {
+			var nameClient = chambasList[i].client;
+			localStorage.setItem('temporal',JSON.stringify(nameClient));   
+			if (nom == chambasList[i].client) {
+				c.html('Client: ' + chambasList[i].client).show();
+				d.html('Descrition: ' + chambasList[i].descriptionC).show();
+				f.html('Date: ' + chambasList[i].date).show();
+				n.html('Notes: ' + chambasList[i].notes).show();
+			};
+		}
+	},
+
+	loadFields : function(){													
+		var chambasList = [];
+		chambasList = JSON.parse(localStorage.getItem("chambas"));
+		for (i in chambasList) {
+			var nomCompleto = chambasList[i].client;
+			var n = JSON.parse(localStorage.getItem("temporal"));
+			if (nomCompleto == n ) {
+				document.getElementById('client').value = chambasList[i].client;
+				document.getElementById('descriptionC').value = chambasList[i].descriptionC;
+				document.getElementById('date').value = chambasList[i].date;
+				document.getElementById('notes').value = chambasList[i].notes;
+			};
+		}
+	},
+
 	bindEvents: function() {
 		jQuery('#saveChambas').click(CHAMBAS.loadChambas);
 		jQuery('#editChambas').click(CHAMBAS.editChambas);
+		jQuery( "#select_chambas" ).change(function() {
+			CHAMBAS.loadData(document.getElementById('select_chambas').value);
+		});
 	},
 };
 
 jQuery(document).ready( function() {
 	CHAMBAS.bindEvents();
+	if (document.getElementById('select_chambas')) {
+		CHAMBAS.loadCombo();
+	}
+	if (document.getElementById('editChambas')) {												
+		CHAMBAS.loadFields();
+	};
 });

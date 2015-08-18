@@ -22,7 +22,6 @@ var CLIENTS = CLIENTS || {
 		var lastName = document.getElementById('lastName').value;
 		var idU = document.getElementById('id').value;
 		var phone = document.getElementById('phone').value;
-
 		var newClient = new CLIENTS.client(nameU, lastName, idU, phone);
 		newClient.save();
 	},
@@ -37,7 +36,6 @@ var CLIENTS = CLIENTS || {
 		var n = JSON.parse(localStorage.getItem("temporal"));      //////////////////////////////////////////////////////////////
 		for (i in clientsList) {
 			var x = clientsList[i].nameU + " " + clientsList[i].lastName;
-			debugger;
 			if ( x == n) {
 				clientsList[i].nameU = nameU;
 				clientsList[i].lastName = lastName;
@@ -51,9 +49,7 @@ var CLIENTS = CLIENTS || {
 	loadCombo : function(){
 		var clientsList = [];
 		clientsList = JSON.parse(localStorage.getItem("clients"));
-
 		var s = document.getElementById('select_clients');
-		
 		for (i in clientsList) {
 			var t = document.createElement("option");
 			//t.value = clientsList[i].nameU + " " + clientsList[i].lastName;
@@ -72,7 +68,7 @@ var CLIENTS = CLIENTS || {
 
 		for (i in clientsList) {
 			var nomCompleto = clientsList[i].nameU + " " + clientsList[i].lastName;
-			localStorage.setItem('temporal',JSON.stringify(nomCompleto));       /////////////////////////////////////////////////////////
+			localStorage.setItem('temporal',JSON.stringify(nomCompleto));       
 			if (nom == nomCompleto) {
 				n.html('Nombre: ' + nomCompleto).show();
 				c.html('Cédula: ' + clientsList[i].idU).show();
@@ -81,7 +77,7 @@ var CLIENTS = CLIENTS || {
 		}
 	},
 
-	loadFields : function(){													////////////////////////////////////////////////
+	loadFields : function(){													
 		var clientsList = [];
 		clientsList = JSON.parse(localStorage.getItem("clients"));
 		for (i in clientsList) {
@@ -99,7 +95,6 @@ var CLIENTS = CLIENTS || {
 	bindEvents: function() {
 		jQuery('#saveClient').click(CLIENTS.loadClient);
 		jQuery('#editClient').click(CLIENTS.editClient);
-
 		jQuery( "#select_clients" ).change(function() {
 			CLIENTS.loadData(document.getElementById('select_clients').value);
 		});
@@ -111,10 +106,7 @@ jQuery(document).ready( function() {
 	if (document.getElementById('select_clients')) {
 		CLIENTS.loadCombo();
 	}
-	if (document.getElementById('editClient')) {												///////////////////////////////
+	if (document.getElementById('editClient')) {												
 		CLIENTS.loadFields();
 	};
-		
-	
-	
 });
