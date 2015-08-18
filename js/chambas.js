@@ -100,9 +100,45 @@ var CHAMBAS = CHAMBAS || {
 		}
 	},
 
+	deleteChamba: function() {
+		var selectValue = document.getElementById('select_chambas').value;
+		if (selectValue == "Please select") {
+			swal("Wait!", "Please select a chamba!", "warning")
+		} else {
+			var n = JSON.parse(localStorage.getItem("temporal"));
+			swal({
+				title: "You want to delete the chamba to: " + n + "?",
+				text: "You will not be able to recover this chamba!",
+				type: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#DD6B55",
+				confirmButtonText: "Yes, delete it!",
+				closeOnConfirm: false }, function(){
+					swal("Deleted!", "The chamba has been deleted.", "success");
+					var chambasList = [];
+					chambasList = JSON.parse(localStorage.getItem("chambas"));
+					var n = JSON.parse(localStorage.getItem("temporal"));
+
+					for (var i = 0; i < chambasList.length; i++) {
+						if(chambasList[i].client == n){
+							chambasList.splice(i,1);
+							break;
+						}
+					}
+
+					chambasList = JSON.stringify(chambasList)
+					localStorage.setItem("chambas", chambasList);
+					setTimeout ("location.reload(true);", 1500); 
+
+				});
+		};
+		
+	},
+
 	bindEvents: function() {
 		jQuery('#saveChambas').click(CHAMBAS.loadChambas);
 		jQuery('#editChambas').click(CHAMBAS.editChambas);
+		jQuery('#delete_chamba').click(CHAMBAS.deleteChamba);
 		jQuery( "#select_chambas" ).change(function() {
 			CHAMBAS.loadData(document.getElementById('select_chambas').value);
 		});

@@ -17,7 +17,6 @@ var INVOICES = INVOICES || {
 	},
 
 	loadinvoices : function(){
-		debugger;
 		var client = document.getElementById('client').value;
 		var descriptionI = document.getElementById('descriptionI').value;
 		var date = document.getElementById('date').value;
@@ -104,9 +103,45 @@ var INVOICES = INVOICES || {
 		}
 	},
 
+	deleteInvoice: function() {
+		var selectValue = document.getElementById('select_invoices').value;
+		if (selectValue == "Please select") {
+			swal("Wait!", "Please select an invoice!", "warning")
+		} else {
+			var n = JSON.parse(localStorage.getItem("temporal"));
+			swal({
+				title: "You want to delete the invoice to: " + n + "?",
+				text: "You will not be able to recover this invoice!",
+				type: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#DD6B55",
+				confirmButtonText: "Yes, delete it!",
+				closeOnConfirm: false }, function(){
+					swal("Deleted!", "The invoice has been deleted.", "success");
+					var invoicesList = [];
+					invoicesList = JSON.parse(localStorage.getItem("invoices"));
+					var n = JSON.parse(localStorage.getItem("temporal"));
+
+					for (var i = 0; i < invoicesList.length; i++) {
+						if(invoicesList[i].client == n){
+							invoicesList.splice(i,1);
+							break;
+						}
+					}
+
+					invoicesList = JSON.stringify(invoicesList)
+					localStorage.setItem("invoices", invoicesList);
+					setTimeout ("location.reload(true);", 1500); 
+
+				});
+		};
+		
+	},
+
 	bindEvents: function() {
 		jQuery('#saveInvoices').click(INVOICES.loadinvoices);
 		jQuery('#editInvoices').click(INVOICES.editinvoices);
+		jQuery('#delete_invoice').click(INVOICES.deleteInvoice);
 		jQuery( "#select_invoices" ).change(function() {
 			INVOICES.loadData(document.getElementById('select_invoices').value);
 		});

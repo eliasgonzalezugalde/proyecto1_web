@@ -91,9 +91,46 @@ var CLIENTS = CLIENTS || {
 		}
 	},
 
+	deleteClient: function() {
+		var selectValue = document.getElementById('select_clients').value;
+		if (selectValue == "Please select") {
+			swal("Wait!", "Please select a client!", "warning")
+		} else {
+			var n = JSON.parse(localStorage.getItem("temporal"));
+			swal({
+				title: "You want to delete the client: " + n + "?",
+				text: "You will not be able to recover this client!",
+				type: "warning",
+				showCancelButton: true,
+				confirmButtonColor: "#DD6B55",
+				confirmButtonText: "Yes, delete it!",
+				closeOnConfirm: false }, function(){
+					swal("Deleted!", "The client has been deleted.", "success");
+					var clientsList = [];
+					clientsList = JSON.parse(localStorage.getItem("clients"));
+					var n = JSON.parse(localStorage.getItem("temporal"));
+
+					for (var i = 0; i < clientsList.length; i++) {
+						var nomCompleto = clientsList[i].nameU + " " + clientsList[i].lastName;
+						if(nomCompleto == n){
+							clientsList.splice(i,1);
+							break;
+						}
+					}
+
+					clientsList = JSON.stringify(clientsList)
+					localStorage.setItem("clients", clientsList);
+					setTimeout ("location.reload(true);", 1500); 
+
+				});
+		};
+		
+	},
+
 	bindEvents: function() {
 		jQuery('#saveClient').click(CLIENTS.loadClient);
 		jQuery('#editClient').click(CLIENTS.editClient);
+		jQuery('#delete_client').click(CLIENTS.deleteClient);
 		jQuery( "#select_clients" ).change(function() {
 			CLIENTS.loadData(document.getElementById('select_clients').value);
 		});

@@ -30,4 +30,3 @@ $(window).resize(function(){
 $("#login").submit(function(e) {
   e.preventDefault();
 });
-
