@@ -17,7 +17,6 @@ var USERS = USERS || {
 	},
 
 	loadUsers : function(){
-		debugger;
 		var userName = document.getElementById('name_users').value;
 		var user = document.getElementById('user_users').value;
 		var pass = document.getElementById('pass_users').value;
@@ -107,7 +106,6 @@ var USERS = USERS || {
 			var user = usersList[i].user;
 			var n = JSON.parse(localStorage.getItem("temporal"));
 			if (user == n ) {
-				debugger;
 				document.getElementById('name').value = usersList[i].user_name;
 				document.getElementById('userName').value = usersList[i].user;
 				document.getElementById('password').value = usersList[i].pass;
