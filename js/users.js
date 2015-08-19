@@ -17,9 +17,10 @@ var USERS = USERS || {
 	},
 
 	loadUsers : function(){
-		var userName = document.getElementById('name').value;
-		var user = document.getElementById('userName').value;
-		var pass = document.getElementById('password').value;
+		debugger;
+		var userName = document.getElementById('name_users').value;
+		var user = document.getElementById('user_users').value;
+		var pass = document.getElementById('pass_users').value;
 
 		var newUser = new USERS.user(userName, user, pass);
 		newUser.save();
