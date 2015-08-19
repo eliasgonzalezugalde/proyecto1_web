@@ -20,10 +20,18 @@ var USERS = USERS || {
 		var userName = document.getElementById('name_users').value;
 		var user = document.getElementById('user_users').value;
 		var pass = document.getElementById('pass_users').value;
+		var rePass = document.getElementById('re_pass_users').value;
+		var errorElement = jQuery('#error_msg');
 
-		var newUser = new USERS.user(userName, user, pass);
-		newUser.save();
-		console.log(localStorage.getItem("users"));
+		if (pass != rePass) {
+			errorElement.html('Passwords do not match').addClass('errorAddUsers').show("fast");
+			//swal("Wait!", "Passwords do not match, please check it!", "warning")
+		} else {
+			var newUser = new USERS.user(userName, user, pass);
+			newUser.save();
+			document.getElementById("register_form").action = "users.php";
+			document.getElementById("register_form").submit();
+		};
 	},
 
 	validateUser : function(){
@@ -31,18 +39,17 @@ var USERS = USERS || {
 		var txtUser = document.getElementById('user_login').value;
 		var txtPass = document.getElementById('pass_login').value;
 
-		var msjAlert = jQuery('#error_msg');
 		var errorElement = jQuery('#error_msg');
 		for (i in usersList) {
 			if (usersList[i].user == txtUser && usersList[i].pass == txtPass) {
 				localStorage.setItem('current',JSON.stringify(txtUser)); //guardamos el usuario actual
-				var si = true;
+				var userValidate = true;
 				document.getElementById("login").action = "main.php";
 				document.getElementById("login").submit();
 			};
 		}
-		if (!si) {
-			errorElement.html('Username or Password invalid').addClass('error').show();
+		if (!userValidate) {
+			errorElement.html('Username or Password invalid').addClass('errorLogin').show("fast");
 		};
 	},
 
